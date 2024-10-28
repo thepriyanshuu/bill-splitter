@@ -35,7 +35,8 @@ generateBtn.addEventListener('click', ()=>{
     generatedTip.innerText = `₹${parseInt(tippedAmount)}`
     const totalWithTip = parseInt(tippedAmount+billAmount);
     generatedTotal.innerText = `₹${totalWithTip}`;
-    generatedBill.innerText = `₹${totalWithTip/noOfPeople}`;
+    const personBill = totalWithTip/noOfPeople
+    generatedBill.innerText = `₹${personBill.toFixed(2)}`;
     [...tipAmount.children].forEach((btn)=>{
         btn.disabled = true
         btn.classList.remove('outline')
